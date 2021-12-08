@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Successed</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{MenuHomePage.css}">
+    <script th:src="@{JavascriptMenuHomePage.js}"></script>
+</head>
+<body style="background-image: url('https://www.pilotpartners.com.au/wp-content/uploads/2019/08/iStock-1001713236-medical-plain.jpg');">
+<!--    <div>-->
+<!--        <h3> Tạo tài khoản thành công</h3>-->
+<!--    </div>-->
+<div id="wrapper">
+    <div class="tabMenu" style="display: flex;">
+        <img class="logo" src="logoboyte.png">
+        <p style="font-size: 30pt;margin-top: 14px;font-family: revert;margin-left: 275px;">Khai báo y tế toàn dân</p>
+        <a style=
+        "margin-left: 300px;
+        height: auto;
+        margin-top: 30px;
+        font-size: 13pt;" 
+        th:href="@{/logout}">Đăng xuất</a>
+    </div>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'London')">Khai báo y tế</button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">Lịch sử khai báo dịch tễ</button>
+    </div>
+
+    <div id="London" class="tabcontent">
+        <div class="title_header">
+            <h2 class="title">THÔNG TIN KHAI BÁO Y TẾ</h2>
+            <h4 class="title">PHÒNG CHỐNG DỊCH COVID-19</h4>
+            <P class="title" style="color: red;">khuyến cáo: khai báo thông tin sai sự thật là vi phạm luật Việt Nam và
+                có thể xử lý hình sự</P>
+        </div>
+        <form th:action="@{/khaibaoyte}"
+              method="post">
+            <div class="khaibao">
+                <div class="input_SDT">
+                    <input class="text_input_SDT" type="text" name="sdt" placeholder="Số điện thoại" required>
+                </div>
+                <div>
+                    <div class="radio_button_group">
+                        <p class="text_title">Trong vòng 14 ngày qua, Anh/Chị có đến tỉnh/thành phố, quốc gia/vùng lãnh
+                            thổ nào (Có thể đi qua
+                            nhiều nơi)</p>
+                        <div class="radio_button">
+                            <input type="radio" name="dichuyen" value="Có"/>Có
+                            <input type="radio" name="dichuyen" value="Không" checked/>Không<br>
+                        </div>
+                    </div>
+                    <div class="radio_button_group">
+                        <p class="text_title">có trieu chung không</p>
+                        <div class="radio_button">
+                            <input type="radio" name="trieuchung" value="Có"/>Có
+                            <input type="radio" name="trieuchung" value="Không" checked/>Không<br>
+                        </div>
+                    </div>
+                    <p style="padding-bottom: 20px; font-weight: bold;">Trong vòng 14 ngày qua, Anh/Chị có tiếp xúc
+                        với(*)</p>
+                    <div class="radio_button_group">
+                        <p class="text_title">có nghi nhiem không</p>
+                        <div class="radio_button">
+                            <input type="radio" name="nghinhiem" value="Có"/>Có
+                            <input type="radio" name="nghinhiem" value="Không" checked/>Không<br>
+                        </div>
+                    </div>
+                    <div class="radio_button_group">
+                        <p class="text_title">có nuoc benh không</p>
+                        <div class="radio_button">
+                            <input type="radio" name="nuocbenh" value="Có"/>Có
+                            <input type="radio" name="nuocbenh" value="Không" checked/>Không<br>
+                        </div>
+                    </div>
+                    <div class="radio_button_group">
+                        <p class="text_title">có bieu hien không</p>
+                        <div class="radio_button">
+                            <input type="radio" name="bieuhien" value="Có"/>Có
+                            <input type="radio" name="bieuhien" value="Không" checked/>Không<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="nutgui">Gửi</button>
+        </form>
+    </div>
+
+    <div id="Paris" class="tabcontent">
+        <div>
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Mã tờ khai</th>
+                    <th>Số điện thoại</th>
+                    <th>Di chuyển</th>
+                    <th>Triệu chứng</th>
+                    <th>Nghi nhiễm</th>
+                    <th>Nước bệnh</th>
+                    <th>Biểu hiện</th>
+                    <th>Ngày khai báo</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="danhsachtokhai:${lstkhaibao}">
+                    <td th:text="${danhsachtokhai.id}"/>
+                    <td th:text="${danhsachtokhai.sdt}"/>
+                    <td th:text="${danhsachtokhai.dichuyen}"/>
+                    <td th:text="${danhsachtokhai.trieuchung}"/>
+                    <td th:text="${danhsachtokhai.nghinhiem}"/>
+                    <td th:text="${danhsachtokhai.nuocbenh}"/>
+                    <td th:text="${danhsachtokhai.bieuhien}"/>
+                    <td th:text="${danhsachtokhai.ngaykhaibao}"/>
+                </tr>
+                </th:block>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html> 

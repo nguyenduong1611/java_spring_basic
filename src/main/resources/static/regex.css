@@ -1,0 +1,43 @@
+#wrapper {
+    width: 1200px;
+    margin: auto;
+}
+
+#regexValue {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+#testData {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+#testString {
+    width: 1200px;
+    height: 200px;
+}
+
+.title1 {
+    font-size: 20px;
+    margin-bottom: -10px;
+}
+
+.title2 {
+    font-size: 20px;
+    margin-bottom: -10px;
+}
+.title3 {
+    font-size: 20px;
+    margin-bottom: -10px;
+}
+#result{
+    border: solid 1px gray;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.ul{
+    list-style: none;
+}

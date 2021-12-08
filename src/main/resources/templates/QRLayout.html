@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Successed</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{MenuHomePage.css}">
+    <script th:src="@{JavascriptMenuHomePage.js}"></script>
+</head>
+<body style="background-image: url('https://www.pilotpartners.com.au/wp-content/uploads/2019/08/iStock-1001713236-medical-plain.jpg');">
+<!--    <div>-->
+<!--        <h3> Tạo tài khoản thành công</h3>-->
+<!--    </div>-->
+<div id="wrapper">
+    <div class="tabMenu" style="display: flex;">
+        <img class="logo" src="logoboyte.png">
+        <p style="font-size: 30pt;margin-top: 14px;font-family: revert;margin-left: 275px;">Khai báo y tế toàn dân</p>
+        <a style=
+        "margin-left: 300px;
+        height: auto;
+        margin-top: 30px;
+        font-size: 13pt;" 
+        th:href="@{/logout}">Đăng xuất</a>
+    </div>
+    <div style="background-color: white;height: auto;">
+        <div style="margin: auto; align-items: center;">
+            <img style="margin-left: 425px;" th:src="@{|*{image}|}">
+            <p style="margin-left: 425px;">Mã QRCode dùng để Check in, Check out</p>
+        </div>
+        <div style="margin-left: 20px; padding-bottom: 30px;">
+            <p th:text="*{hello}"></p>
+            <h2>Cảm ơn bạn đã tham gia khai báo thông tin y tế!</h2>
+            <p>Mọi thông tin chi tiết xin vui lòng liên hệ đường dây nóng <p style="color:red;">1900.9095</p></p>
+            <p>Để phòng tránh và ngăn chặn sự lây lan của virus, hãy chủ động thực hiện tốt các biện pháp sau:</p>
+            <p>– Cần che mũi và miệng khi ho, xì mũi bằng khăn/giấy dùng 1 lần</p>
+            <p>– Thường xuyên súc họng bằng nước sát khuẩn miệng</p>
+            <p>– Tránh tiếp xúc bất kỳ ai có dấu hiệu/triệu chứng cảm lạnh hoặc triệu chứng như cúm</p>
+            <p>– Nên hạn chế đi ra ngoài, hạn chế đám đông, bớt đi lễ hội, chùa chiền</p>
+            <p>– Ăn uống điều độ, uống nhiều nước, vận động đều đặn</p>
+            <p>– Khi ra ngoài cần đeo khẩu trang, thường xuyên rửa tay, hạn chế ngồi phòng máy lạnh</p>
+            <p>– Nhà cửa giữ sạch sẽ, thông thoáng, có ánh nắng càng tốt</p>
+            <p>– Nếu thấy có biểu hiện của bệnh viêm đường hô hấp cấp tính, phải thông báo ngay cho cơ sở y tế gần nhất để được tư vấn, cách ly và điều trị phù hợp</p>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  db:
+    image: mysql
+    volumes:
+      - db_data_test:/var/lib/mysql
+    #restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: javaspring
+      MYSQL_USER: user01
+      MYSQL_PASSWORD: 123456
+    ports:
+      - '3306:3306'
+    networks:
+      - wpsite
+  # phpmyadmin
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: 123456 
+    networks:
+      - wpsite
+networks:
+  wpsite:
+volumes:
+  db_data_test:

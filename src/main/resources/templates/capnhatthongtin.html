@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cập nhật thông tin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" th:href="@{favicon.ico}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{bootstrap.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{font-awesome.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{material-design-iconic-font.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{animate.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{hamburgers.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{animsition.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{select2.min.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{daterangepicker.css}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" th:href="@{util.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{main.css}">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+
+<div class="container-login100"
+     style="background-image: url('https://www.pilotpartners.com.au/wp-content/uploads/2019/08/iStock-1001713236-medical-plain.jpg');">
+    <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+        <form class="login100-form validate-form"
+              th:action="@{/updateinfo}"
+              method="post">
+				<span class="login100-form-title p-b-37">
+					Đăng ký
+				</span>
+
+            <div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
+                <input class="input100" type="text" name="hoten" placeholder="Họ và tên" required>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input m-b-25" data-validate="Enter password">
+                <input class="input100" type="text" name="sdt"  placeholder="Số điện thoại" required>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input m-b-25" data-validate="Enter password">
+                <input class="input100" type="text" name="diachi"  placeholder="Địa chỉ" required>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input m-b-25" data-validate="Enter password">
+                <input class="input100" type="text" name="cccd"  placeholder="Căn cước công dân" required>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="container-login100-form-btn">
+                <button type="submit" class="login100-form-btn">
+                    Đăng ký
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+<script th:src="@{jquery-3.2.1.min.js}"></script>
+<!--===============================================================================================-->
+<script th:src="@{animsition.min.js}"></script>
+<!--===============================================================================================-->
+<script th:src="@{popper.js}"></script>
+<script th:src="@{bootstrap.min.js}"></script>
+<!--===============================================================================================-->
+<script th:src="@{select2.min.js}"></script>
+<!--===============================================================================================-->
+<script th:src="@{moment.min.js}"></script>
+<script th:src="@{daterangepicker.js}"></script>
+<!--===============================================================================================-->
+<script th:src="@{countdowntime.js}"></script>
+<!--===============================================================================================-->
+<script th:rc="@{main.js}"></script>
+
+</body>
+</html>
